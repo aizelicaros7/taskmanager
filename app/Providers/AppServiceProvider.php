@@ -14,8 +14,12 @@ class AppServiceProvider extends ServiceProvider
 
     public function boot(): void
     {
-        if (env('CODESPACES')) {
-            URL::forceRootUrl(config('app.url'));
+        $codespaceName = env('CODESPACE_NAME');
+        $domain = env('GITHUB_CODESPACES_PORT_FORWARDING_DOMAIN');
+
+        if ($codespaceName && $domain) {
+            $url = "https://{$codespaceName}-8000.{$domain}";
+            URL::forceRootUrl($url);
             URL::forceScheme('https');
         }
     }
