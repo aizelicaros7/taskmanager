@@ -1,7 +1,12 @@
-Project Code: WST21-PM-2026-SF
-Student Name: Mery Aize C. Licaros
-Course & Year: BSIT - 2nd Year
-Database Used: SQLite
+# Personal Task Manager
+
+**Project Code:** WST21-PM-2026-SF
+
+**Student Name:** Mery Aize C. Licaros
+
+**Course & Year:** BSIT - 2nd Year
+
+**Database Used:** SQLite
 
 ## Features
 - Add Task
@@ -16,9 +21,37 @@ Database Used: SQLite
 - SQLite Database
 
 ## How to Run Locally
+
 1. Clone the repository
-2. Run `composer install`
-3. Copy `.env.example` to `.env` and run `php artisan key:generate`
-4. Create the SQLite file: `touch database/database.sqlite`
-5. Run `php artisan migrate`
-6. Run `php artisan serve`
+```bash
+   git clone https://github.com/aizelicaros7/taskmanager.git
+   cd taskmanager
+```
+
+2. Install dependencies
+```bash
+   composer install
+```
+
+3. Set up environment file
+```bash
+   cp .env.example .env
+   php artisan key:generate
+```
+
+4. Create the SQLite database file
+```bash
+   touch database/database.sqlite
+```
+
+5. Run migrations
+```bash
+   php artisan migrate
+```
+
+6. Start the server
+```bash
+   php artisan serve
+```
+
+7. Open **http://localhost:8000** in your browser
