@@ -20,38 +20,19 @@
 - Blade Templates
 - SQLite Database
 
-## How to Run Locally
+## How to Run (GitHub Codespaces)
 
-1. Clone the repository
-```bash
-   git clone https://github.com/aizelicaros7/taskmanager.git
-   cd taskmanager
-```
-
-2. Install dependencies
+1. Open this repository on GitHub
+2. Click the green **Code** button → **Codespaces** tab → **Create codespace on main**
+3. Wait for the Codespace to finish setting up
+4. In the terminal, run:
 ```bash
    composer install
-```
-
-3. Set up environment file
-```bash
    cp .env.example .env
    php artisan key:generate
-```
-
-4. Create the SQLite database file
-```bash
    touch database/database.sqlite
-```
-
-5. Run migrations
-```bash
    php artisan migrate
+   php artisan serve --host=0.0.0.0
 ```
+5. Click the **Ports** tab (next to Terminal), find port **8000**, and click the globe icon to open it in your browser
 
-6. Start the server
-```bash
-   php artisan serve
-```
-
-7. Open **http://localhost:8000** in your browser
